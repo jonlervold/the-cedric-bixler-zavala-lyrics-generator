@@ -1,65 +1,54 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import './App.css';
-import Lyrics from './components/Lyrics';
+import styled from 'styled-components';
+import useGenerateLyrics from './hooks/useGenerateLyrics';
+import Title from './components/Title';
+import LeftColumn from './components/LeftColumn';
+import RightColumn from './components/RightColumn';
 
 const StyledApp = styled.div`
   font-family: Monaco, monospace;
   color: white;
   text-align: center;
   justify-content: center;
-  img {
-    align-self: center;
-  }
 `;
 const MainBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;
-const Card = styled.div`
-  width: 40%;
-  height: 636px;
-  background-color: gray;
-  display: inline-block;
-  margin: 0.5rem;
-  overflow: scroll;
+  .right-side {
+    display: inline-block;
+    width: 40%;
+  }
+  @media (max-width: 800px) {
+    .right-side {
+      width: 424px;
+    }
+  }
+  .lyrics-box {
+    height: 636px;
+    width: 100%;
+    background-color: gray;
+    display: inline-block;
+    overflow-y: scroll;
+    padding: 0.8rem;
+  }
 `;
 
 export function App() {
-  const [generatedLyrics, setGeneratedLyrics] = useState<
-    string | JSX.Element[]
-  >('Wait');
-
-  const handleGenerate = async () => {
-    const res: { data: string } = await axios.get(
-      'https://azrpmnicq4kbbzcvbxbkkfozra0swfty.lambda-url.us-east-1.on.aws'
-    );
-    console.log(res.data);
-    const newLyrics = res.data.split('\n').map((item) => {
-      return (
-        <span>
-          {item}
-          <br />
-        </span>
-      );
-    });
-
-    setGeneratedLyrics(newLyrics);
-  };
-
+  const { isLoading, error, generatedLyrics, handleGenerate } =
+    useGenerateLyrics();
   return (
     <StyledApp>
-      <img src="../assets/dashes.png" />
-      <img src="../assets/app-title.png" />
-      <img src="../assets/dashes.png" />
+      <Title />
       <MainBlock>
-        <img src="../assets/cedric.png" />
-        <Card>{generatedLyrics}</Card>
-        {/* {generatedLyrics} */}
+        <LeftColumn />
+        <RightColumn
+          isLoading={isLoading}
+          generatedLyrics={generatedLyrics}
+          handleGenerate={handleGenerate}
+        />
       </MainBlock>
-      <button onClick={handleGenerate}>Generate!</button>
+      {error}
       <button>About Cedric Bixler Lyrics Generator</button>
     </StyledApp>
   );
