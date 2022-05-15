@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import getLyrics from '../api/getLyrics';
+import formatLyrics from '../util/formatLyrics';
 
 const useGenerateLyrics = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ const useGenerateLyrics = () => {
     } catch (e) {
       if (e instanceof Error) {
         setError(
-          'There was an error contacting the server. Check your internet connection.'
+          'There was no response from the server while attempting to generate new lyrics. Check your internet connection.'
         );
       }
     }
