@@ -1,13 +1,15 @@
 import './App.css';
+import Footer from './components/Footer';
 import MainBlock from './components/MainBlock';
+import Container from './components/styles/Container';
 
 export function App() {
   return (
-    <div className="container">
-      <img alt="Drawing of Cedric Bixler" src="../assets/cedric.jpg" />
+    <Container>
+      <img alt="Portrait of Cedric Bixler" src="./assets/cedric.jpg" />
       <MainBlock />
-      <div className="footer">jonlervold.com // 2022</div>
-    </div>
+      <Footer />
+    </Container>
   );
 }
 
