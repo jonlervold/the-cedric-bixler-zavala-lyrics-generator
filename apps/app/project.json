@@ -11,7 +11,7 @@
         "compiler": "babel",
         "outputPath": "dist/apps/app",
         "index": "apps/app/src/index.html",
-        "baseHref": "/",
+        "baseHref": "/the-cedric-bixler-zavala-lyrics-generator/",
         "main": "apps/app/src/main.tsx",
         "polyfills": "apps/app/src/polyfills.ts",
         "tsConfig": "apps/app/tsconfig.app.json",
