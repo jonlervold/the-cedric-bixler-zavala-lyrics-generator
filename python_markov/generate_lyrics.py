@@ -1,8 +1,8 @@
 import random
 
 
-def generate_lyrics():
-    word_count = 5000
+def generate_bixler():
+    word_count = 300
 
     text_input = open(r'lyrics.txt',
                       encoding='utf8').read()
@@ -41,8 +41,9 @@ def generate_lyrics():
 
     changed_periods = raw_output.replace(". ", ". \n")
     changed_qmarks = changed_periods.replace("? ", "? \n")
+    changed_exc_points = changed_qmarks.replace("!", "! \n")
 
-    split_into_lines = changed_qmarks.splitlines(True)
+    split_into_lines = changed_exc_points.splitlines(True)
 
     i = 4
     while i < len(split_into_lines):
