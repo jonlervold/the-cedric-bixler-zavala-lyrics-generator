@@ -4,6 +4,8 @@ const TextBox = styled.div`
   background-color: #19171c;
   width: 100%;
 
+  margin-bottom: 1rem;
+
   .lyrics {
     padding: 1.5rem;
   }

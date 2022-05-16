@@ -10,13 +10,6 @@ const MainBlock: FC = () => {
   const [displayAbout, setDisplayAbout] = useState(false);
   return (
     <div>
-      <div>
-        {!displayAbout && (
-          <button onClick={handleGenerate}>
-            {isLoading ? 'Generating...' : 'Generate!'}
-          </button>
-        )}
-      </div>
       <TextBox>
         {error && <div className="error">{error}</div>}
         {generatedLyrics && (
@@ -29,6 +22,13 @@ const MainBlock: FC = () => {
           </div>
         )}
       </TextBox>
+      <div>
+        {!displayAbout && (
+          <button onClick={handleGenerate}>
+            {isLoading ? 'Generating...' : 'Generate!'}
+          </button>
+        )}
+      </div>
       <div>
         <button onClick={() => setDisplayAbout(!displayAbout)}>
           {displayAbout ? 'Return' : 'About'}

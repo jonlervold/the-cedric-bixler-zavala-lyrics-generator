@@ -19,8 +19,7 @@ const Container = styled.div`
   button {
     width: 100%;
     padding: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     background-color: rgb(236, 236, 236);
     border: none;
     font-weight: bolder;
