@@ -39,3 +39,6 @@ testem.log
 Thumbs.db
 
 notes.txt
+
+/python_markov/commented.py
+/python_markov/lyrics.txt
