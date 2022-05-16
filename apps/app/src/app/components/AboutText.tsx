@@ -40,7 +40,7 @@ const AboutText = () => {
         <div>User interface created with React.</div>
         <div>
           Code available on{' '}
-          <a href="https://github.com/jonlervold/the-cedric-bixler-lyrics-generator">
+          <a href="https://github.com/jonlervold/the-cedric-bixler-zavala-lyrics-generator">
             GitHub
           </a>
           .
