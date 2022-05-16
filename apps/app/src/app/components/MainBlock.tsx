@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import useGenerateLyrics from '../hooks/useGenerateLyrics';
 import formatLyrics from '../util/formatLyrics';
 import AboutText from './AboutText';
@@ -8,8 +8,16 @@ const MainBlock: FC = () => {
   const { isLoading, error, generatedLyrics, handleGenerate } =
     useGenerateLyrics();
   const [displayAbout, setDisplayAbout] = useState(false);
+
+  const mainBoxRef = useRef<HTMLDivElement>(null);
+  const scrollToContent = () => {
+    if (mainBoxRef.current !== null) {
+      mainBoxRef.current.scrollIntoView();
+    }
+  };
+
   return (
-    <div>
+    <div ref={mainBoxRef}>
       <TextBox>
         {error && <div className="error">{error}</div>}
         {generatedLyrics && (
@@ -24,13 +32,23 @@ const MainBlock: FC = () => {
       </TextBox>
       <div>
         {!displayAbout && (
-          <button onClick={handleGenerate}>
+          <button
+            onClick={async () => {
+              await handleGenerate();
+              scrollToContent();
+            }}
+          >
             {isLoading ? 'Generating...' : 'Generate!'}
           </button>
         )}
       </div>
       <div>
-        <button onClick={() => setDisplayAbout(!displayAbout)}>
+        <button
+          onClick={() => {
+            setDisplayAbout(!displayAbout);
+            scrollToContent();
+          }}
+        >
           {displayAbout ? 'Return' : 'About'}
         </button>
       </div>
