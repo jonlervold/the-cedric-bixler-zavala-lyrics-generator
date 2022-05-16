@@ -43,8 +43,7 @@ const Container = styled.div`
   }
 
   .footer {
-    padding: 1rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 `;
 
