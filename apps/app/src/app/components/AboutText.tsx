@@ -31,6 +31,7 @@ const AboutText = () => {
         <div>Omar Rodríguez-López - ...Is Pushing Luck</div>
         <div>Omar Rodríguez-López - The Palpitations Form a Limit</div>
         <div>Omar Rodríguez-López - Se Dice Bisonte, No Búfalo</div>
+        <div>Zavalaz - Live Performances</div>
       </div>
 
       <p>Application created by Jon Lervold.</p>
