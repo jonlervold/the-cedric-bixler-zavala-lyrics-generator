@@ -1,12 +1,13 @@
 import { FC, useState } from 'react';
 import useGenerateLyrics from '../hooks/useGenerateLyrics';
 import formatLyrics from '../util/formatLyrics';
+import AboutText from './AboutText';
+import TextBox from './styles/TextBox';
 
 const MainBlock: FC = () => {
   const { isLoading, error, generatedLyrics, handleGenerate } =
     useGenerateLyrics();
   const [displayAbout, setDisplayAbout] = useState(false);
-  const aboutText = 'Hello';
   return (
     <div>
       <div>
@@ -16,12 +17,18 @@ const MainBlock: FC = () => {
           </button>
         )}
       </div>
-      <div className="text-box">
+      <TextBox>
         {error && <div className="error">{error}</div>}
-        <div className="lyrics">
-          {displayAbout ? aboutText : <>{formatLyrics(generatedLyrics)}</>}
-        </div>
-      </div>
+        {generatedLyrics && (
+          <div className="lyrics">
+            {displayAbout ? (
+              <AboutText />
+            ) : (
+              <>{formatLyrics(generatedLyrics)}</>
+            )}
+          </div>
+        )}
+      </TextBox>
       <div>
         <button onClick={() => setDisplayAbout(!displayAbout)}>
           {displayAbout ? 'Return' : 'About'}
