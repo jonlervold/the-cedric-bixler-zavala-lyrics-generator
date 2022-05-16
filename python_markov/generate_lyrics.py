@@ -12,11 +12,9 @@ def generate_bixler():
     def make_pairs(all_original_lyrics):
         for i in range(len(all_original_lyrics)-1):
             yield (all_original_lyrics[i], all_original_lyrics[i+1])
-
     pairs = make_pairs(all_original_lyrics)
 
     word_match_dictionary = {}
-
     for word_1, word_2 in pairs:
         if word_1 in word_match_dictionary.keys():
             word_match_dictionary[word_1].append(word_2)
@@ -27,7 +25,6 @@ def generate_bixler():
 
     while first_word.islower():
         first_word = random.choice(all_original_lyrics)
-
     raw_generated_lyrics = [first_word]
 
     try:
@@ -39,22 +36,22 @@ def generate_bixler():
 
     raw_output = (' '.join(raw_generated_lyrics))
 
-    changed_periods = raw_output.replace(". ", ". \n")
-    changed_qmarks = changed_periods.replace("? ", "? \n")
-    changed_exc_points = changed_qmarks.replace("!", "! \n")
+    added_breaks = raw_output.replace(". ", ". \n").replace(
+        "? ", "? \n").replace("!", "! \n")
 
-    split_into_lines = changed_exc_points.splitlines(True)
+    split_into_lines = added_breaks.splitlines(True)
 
     i = 4
     while i < len(split_into_lines):
         split_into_lines.insert(i, "\n")
         i += 5
 
-    split_into_lines.reverse()
-    final_line_break_index = split_into_lines.index("\n")
-    final_line_break_index = len(split_into_lines) - final_line_break_index - 1
-    split_into_lines.reverse()
+    fourth_line_break_index = [index for index, list_item in enumerate(
+        split_into_lines) if list_item == "\n"][3]
 
-    stripped_excess = split_into_lines[:final_line_break_index]
+    stripped_excess = split_into_lines[:fourth_line_break_index]
     print(' '.join(stripped_excess))
     return ' '.join(stripped_excess)
+
+
+generate_bixler()
