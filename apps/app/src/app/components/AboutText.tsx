@@ -3,8 +3,10 @@ const AboutText = () => {
     <>
       <p className="first">
         The Cedric Bixler-Zavala Lyrics Generator analyzes the word combinations
-        present in Bixler-Zavala's lyrics spanning his career to date and
-        attempts to piece together new lines using a Markov chain algorithm.
+        present in Bixler-Zavala's body of work and attempts to piece together
+        new lines using a Markov chain algorithm. Each phrase generated lands
+        somewhere on a spectrum between excellent surreal imagery and utterly
+        broken nonsense.
       </p>
       <div className="sources">
         <p>Lyric Sources:</p>
