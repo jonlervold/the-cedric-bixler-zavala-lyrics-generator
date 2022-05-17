@@ -23,6 +23,7 @@ const Container = styled.div`
     background-color: rgb(236, 236, 236);
     border: none;
     font-weight: bolder;
+    color: black;
   }
 
   a:link,
@@ -36,6 +37,13 @@ const Container = styled.div`
   table {
     table-layout: fixed;
     margin: auto;
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid gray;
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
   }
 
   .error {
