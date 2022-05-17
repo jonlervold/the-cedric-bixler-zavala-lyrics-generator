@@ -9,31 +9,107 @@ const AboutText = () => {
         broken nonsense.
       </p>
       <div className="sources">
-        <p>Lyric Sources:</p>
-        <div>Antemasque - Antemasque</div>
-        <div>At the Drive-In - Hell Paso</div>
-        <div>At the Drive-In - Alfaro Vive, Carajo!</div>
-        <div>At the Drive-In - Acrobatic Tenement</div>
-        <div>At the Drive-In - El Gran Orgo</div>
-        <div>At the Drive-In - In/Casino/Out</div>
-        <div>At the Drive-In - Vaya</div>
-        <div>At the Drive-In - Sunshine / At the Drive-In</div>
-        <div>At the Drive-In - Relationship of Command</div>
-        <div>At the Drive-In - in•ter a•li•a</div>
-        <div>At the Drive-In - Diamanté</div>
-        <div>El Grupo Nuevo de Omar Rodríguez-López - Cryptomnesia</div>
-        <div>The Mars Volta - Tremulant</div>
-        <div>The Mars Volta - De-Loused in the Comatorium</div>
-        <div>The Mars Volta - Frances the Mute</div>
-        <div>The Mars Volta - Amputechture</div>
-        <div>The Mars Volta - The Bedlam in Goliath</div>
-        <div>The Mars Volta - Octahedron</div>
-        <div>The Mars Volta - Noctourniquet</div>
-        <div>Omar Rodríguez-López - Calibration</div>
-        <div>Omar Rodríguez-López - ...Is Pushing Luck</div>
-        <div>Omar Rodríguez-López - The Palpitations Form a Limit</div>
-        <div>Omar Rodríguez-López - Se Dice Bisonte, No Búfalo</div>
-        <div>Zavalaz - Live Performances</div>
+        <p>Lyric Sources</p>
+        <table>
+          <tbody>
+            <tr>
+              <td>Antemasque</td>
+              <td>Antemasque</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Hell Paso</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Alfaro Vive, Carajo!</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Acrobatic Tenement</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>El Gran Orgo</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>In/Casino/Out</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Vaya</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Sunshine / At the Drive-In</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Relationship of Command</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>in•ter a•li•a</td>
+            </tr>
+            <tr>
+              <td>At the Drive-In</td>
+              <td>Diamanté</td>
+            </tr>
+            <tr>
+              <td>El Grupo Nuevo de Omar Rodríguez-López</td>
+              <td>Cryptomnesia</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>Tremulant</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>De-Loused in the Comatorium</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>Frances the Mute</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>Amputechture</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>The Bedlam in Goliath</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>Octahedron</td>
+            </tr>
+            <tr>
+              <td>The Mars Volta</td>
+              <td>Noctourniquet</td>
+            </tr>
+            <tr>
+              <td>Omar Rodríguez-López</td>
+              <td>Calibration</td>
+            </tr>
+            <tr>
+              <td>Omar Rodríguez-López</td>
+              <td>...Is Pushing Luck</td>
+            </tr>
+            <tr>
+              <td>Omar Rodríguez-López</td>
+              <td>The Palpitations Form a Limit</td>
+            </tr>
+            <tr>
+              <td>Omar Rodríguez-López</td>
+              <td>Se Dice Bisonte, No Búfalo</td>
+            </tr>
+            <tr>
+              <td>Zavalaz</td>
+              <td>Live Performances</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <p>Application created by Jon Lervold.</p>

@@ -29,9 +29,13 @@ const Container = styled.div`
   a:visited {
     color: white;
   }
-
   a:hover {
     color: orange;
+  }
+
+  table {
+    table-layout: fixed;
+    margin: auto;
   }
 
   .error {
