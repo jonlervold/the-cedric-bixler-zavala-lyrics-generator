@@ -10,7 +10,7 @@ const MainBlock: FC = () => {
   const [displayAbout, setDisplayAbout] = useState(false);
 
   const mainBoxRef = useRef<HTMLDivElement>(null);
-  const scrollToContent = () => {
+  const scrollToMainBox = () => {
     if (mainBoxRef.current !== null) {
       mainBoxRef.current.scrollIntoView();
     }
@@ -35,7 +35,7 @@ const MainBlock: FC = () => {
           <button
             onClick={async () => {
               await handleGenerate();
-              scrollToContent();
+              scrollToMainBox();
             }}
           >
             {isLoading ? 'Generating...' : 'Generate!'}
@@ -46,7 +46,7 @@ const MainBlock: FC = () => {
         <button
           onClick={() => {
             setDisplayAbout(!displayAbout);
-            scrollToContent();
+            scrollToMainBox();
           }}
         >
           {displayAbout ? 'Return' : 'About'}

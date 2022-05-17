@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import getLyrics from '../api/getLyrics';
-import formatLyrics from '../util/formatLyrics';
 
 const useGenerateLyrics = () => {
   const [isLoading, setIsLoading] = useState(true);
